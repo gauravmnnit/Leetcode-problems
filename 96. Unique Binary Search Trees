@@ -1,0 +1,14 @@
+//catalan number
+//nth term equals product of each term (n+k)/k, 2<=k<=n
+
+class Solution {
+public:    
+    int numTrees(int n) {
+        long double ans=1;
+        for(int i=2;i<=n;i++){
+            ans=ans*(n+i)/i;
+        }
+        return ans;
+    } 
+    
+};
