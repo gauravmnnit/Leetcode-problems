@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        int prev[m];
+        int curr[m];
+        prev[0]=1;
+        for(int i=1;i<m;i++)
+            prev[i]=1;
+        for(int i=1;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(j==0){
+                    curr[0]=1;
+                }else{
+                    curr[j]=prev[j]+curr[j-1];
+                }
+            }
+            for(int k=0;k<m;k++){
+                prev[k]=curr[k];
+                curr[k]=0;
+            }
+            
+        }
+        return prev[m-1];
+    }
+};
